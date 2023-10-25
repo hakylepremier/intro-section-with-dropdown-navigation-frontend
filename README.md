@@ -33,8 +33,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Add solution URL here](https://github.com/hakylepremier/intro-section-with-dropdown-navigation-frontend)
+- Live Site URL: [Add live site URL here](https://snap-frontend-haky.netlify.app/)
 
 ## My process
 
