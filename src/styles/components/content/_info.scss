@@ -1,0 +1,63 @@
+.content__info{
+	padding-right: 15.5rem;
+	@include respond-to('portrait') {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding-right: 0;
+	}
+	@include respond-to('medium') {
+		padding-right: 1rem;
+	}
+
+}
+
+.content__info--heading{
+	@extend %title-primary;
+
+	max-width: 55rem;
+	color: $color-secondary;
+	padding-top: calc(100vh / 900 * 102);//10.2rem
+	line-height: 1.01;
+
+	@include respond-to('portrait') {
+		padding-top: 10.2rem;
+		width: 100%;
+		text-align: center;
+
+		& br{
+			display: none;
+		}
+	 }
+	@include respond-to('medium') {
+		padding-top: 10.2rem;
+	}
+	@include respond-to('small') {
+		font-size: 4rem;	
+		padding-top: 5.345rem;
+
+	}
+}
+
+.content__info--copy{
+	max-width: 48rem;
+	padding: calc(100vh / 900 * 54) 0;// 5.4rem
+
+	// letter-spacing: 0.001rem;
+	line-height: 1.48;
+
+	@include respond-to('portrait') {
+		 padding: 5.4rem 0;
+		 text-align: center;
+	 }
+	@include respond-to('medium') {
+		padding: 5.4rem 0;
+	}
+	@include respond-to('small') {
+		padding: 2.3rem 0;
+		padding-bottom: 2.8rem;
+    line-height: 1.55;
+		max-width: 38rem;
+	}
+}

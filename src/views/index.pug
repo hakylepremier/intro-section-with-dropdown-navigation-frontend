@@ -1,0 +1,76 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		base(href="/")
+		meta(name="description", content="This is a solution to a challenge by Frontend Mentor")
+		link(rel="icon", type="image/png", sizes="32x32", href=require("../images/favicon-32x32.png"))
+
+		link(rel="preconnect" href="https://fonts.googleapis.com")
+		link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+		link(href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap" rel="stylesheet")
+
+		link(rel="stylesheet", href=require('../styles/index.scss'))
+
+		title Frontend Mentor | Intro section with dropdown navigation
+
+	body
+		main.main
+			figure.logo__wrapper
+				img.logo(src=require('../images/logo.svg'), alt="Logo of the page")
+
+				img.btn__menu.btn__menu--open(src=require('../images/icon-menu.svg'), alt="")
+			
+			.main__page
+				nav.nav
+					.btn__menu--close--wrapper.btn__menu
+						img.btn__menu--close(src=require('../images/icon-close-menu.svg'), alt="")
+					- const navItems = ['Features','Company','Careers','About']
+					ul.nav__items
+						each nav, index in navItems
+							li.nav__item
+								a.nav__item--link(class=index === 0 | index === 1 && "dropdown__btn", href="#")=nav 
+									if index === 0 | index === 1
+										figure.nav__item--dropdown--wrapper
+											img.nav__item--dropdown(src=require('../images/icon-arrow-down.svg'), alt="")
+	
+								if index === 0 | index === 1
+									//- - const dropItems = require('../data/test.json')
+									- const dropItems = [{icon: require('../images/icon-todo.svg'), label: 'Todo List'},{icon: require('../images/icon-calendar.svg'), label: 'Calendar'},{icon: require('../images/icon-reminders.svg'), label: 'Reminders'},{icon: require('../images/icon-planning.svg'), label: 'Planning'}, {label: 'History'}, {label: 'Our Team'}, {label: 'Blog'}]
+									- let subList = index === 0 ? dropItems.slice(0, 4) : dropItems.slice(4)
+									.dropdown__menu(class=index !== 0 && "dropdown__menu--company")
+										ul.dropdown__items
+											each drop, index in subList
+												li.dropdown__item
+													if drop.icon
+														.dropdown__icon
+															img.dropdown__icon--image(src=drop.icon, alt="")
+													=drop.label
+
+					.auth__btns
+						a.btn__auth.btn__auth--login(href="#") Login
+						a.btn__auth.btn__auth--signup(href="#") Register
+
+				section.content
+					article.content__info
+						h1.content__info--heading Make <br>remote work
+
+						p.content__info--copy Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.
+
+						a.button__cta(href="#") Learn more
+
+						figure.content__info--gallery
+							img.gallery__databiz(src=require('../images/client-databiz.svg'), alt="")
+							img.gallery__audiophile(src=require('../images/client-audiophile.svg'), alt="")
+							img.gallery__meet(src=require('../images/client-meet.svg'), alt="")
+							img.gallery__maker(src=require('../images/client-maker.svg'), alt="")
+
+					picture.content__image
+						source.content__image--media.content__image--media-small(media="(max-width: 900px)", srcset=require('../images/image-hero-mobile.png'))
+						img.content__image--media.content__image--media-big(src=require("../images/image-hero-desktop.png"), alt="Hero Image")
+			
+		.attribution Challenge by #[a.attribution__link(href="https://www.frontendmentor.io?ref=challenge" target=_blank rel=noopener) Frontend Mentor.] Coded by #[a.attribution__link(href="https://www.humphreyyeboah.com") Humphrey Yeboah].
+
+		script(src=require('../js/index.js')) 
+    

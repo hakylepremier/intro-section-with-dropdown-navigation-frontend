@@ -1,0 +1,13 @@
+.attribution{
+	color: lighten($color: $color-tertiary, $amount: 40%);
+	text-align: center;
+	padding-top: calc(100vh / 900 * 50); //8rem;
+	@include respond-to('portrait') {
+		padding-top: 5rem;
+	}
+
+}
+
+.attribution__link{
+	color: $color-secondary;
+}

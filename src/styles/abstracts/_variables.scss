@@ -1,0 +1,25 @@
+/** @format */
+
+$color-primary: hsl(0, 0%, 98%);
+$color-secondary: hsl(0, 0%, 8%);
+$color-tertiary: hsl(0, 0%, 41%);
+$color-white: #fff;
+
+$font-epilogue: "Epilogue";
+
+$z-indexes: ("navigation", "image");
+
+$breakpoints: (
+	"medium": (
+		max-width: 900px,
+	),
+	"small": (
+		max-width: 600px,
+	),
+	"wide": (
+		min-width: 600px,
+	),
+	"portrait": (
+		orientation: portrait,
+	)
+);

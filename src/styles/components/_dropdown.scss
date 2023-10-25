@@ -1,0 +1,128 @@
+.dropdown__menu{
+	@include respond-to('wide') {
+		top: 5rem;
+		right: 1rem;
+		padding: 2.4rem 2rem;
+		// padding-top: ;
+		width: 15rem;
+
+		background-color: rgba($color: red, $alpha: 0.2);
+		background-color: #fff;
+		box-shadow:-1px 0 83px 0px tint($color-tertiary, 70%);
+		border-radius: 0.9rem;
+		position: absolute;
+	}
+
+	height: 0;
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 0.2s;
+	z-index: z('navigation');
+	// display: none;
+	@include respond-to('small') {
+		padding: 0;
+	}
+}
+.dropdown__menu--company{
+	left: 1rem;
+	padding: 2.4rem 2.2rem;
+	width: 11rem;	
+
+	& .dropdown__item{
+		&:not(:last-child){
+			padding-bottom: 2rem;
+		}
+
+	}
+	@include respond-to('small') {
+		position: static;
+		padding: 0rem;
+		width: auto;
+		& .dropdown__item{
+			&:not(:last-child){
+				padding-bottom: 3rem;
+			}
+		}
+	}
+}
+
+.dropdown__item{
+	font-size: 1.4rem;
+
+	&:not(:last-child){
+		padding-bottom: 1.6rem;
+	}
+
+	@include respond-to('small') {
+		font-size: 1.8rem;	
+		&:not(:last-child){
+			padding-bottom: 3.0rem;
+		}
+
+	}
+}
+
+.dropdown__icon{
+	display: inline-block;
+	padding-right: 1.6rem;
+
+	// $dimensions: (('w': 1.4rem, 'h': 1.6rem, 'n': 1),('w': 1.6rem, 'h': 1.6rem, 'n': 2),('w': 1.3rem, 'h': 1.7rem, 'n': 1),('w': 1.6rem, 'h': 1.6rem, 'n': 1));
+	// $colors:'red','green','red','blue';
+	// @for $i from 1 through length($dimensions) {
+  // $color: nth($colors, $i);
+  // .cube:nth-child(#{$i}){	
+	// @each $size in $dimensions {
+		// $num: index($dimensions, $size);
+		// $height: map.get($size, 'h');
+		
+	// width: 1.6rem;
+	// height: 1.6rem;
+	// position: relative;
+}
+
+.dropdown__icon--image{
+// 	@extend %cover;
+
+// 	object-fit: contain;
+	&:nth-child(1){
+		height: 1.6rem;
+		width: 1.4rem;
+	}
+	&:nth-child(2){
+		height: 1.6rem;
+		width: 1.6rem;
+	}
+	&:nth-child(3){
+		height: 1.3rem;
+		width: 1.7rem;
+	}
+	&:nth-child(4){
+		height: 1.6rem;
+		width: 1.6rem;
+	}
+
+}
+
+.dropdown__active{
+	height: auto;
+	visibility: visible;
+	opacity: 1;
+	@include respond-to('small') {
+		display: block;
+		padding: 2.2rem 4rem;
+	}
+}
+
+.test{
+	position: fixed;
+	top: 10rem;
+	left: 10rem;
+	width: 20rem;
+	height: 0;
+	background-color: red;
+	transition: height s;
+}
+
+.test--active{
+	height: 20rem;
+}

@@ -1,0 +1,49 @@
+.content__image{
+	width: 48rem;
+	height: calc(100vh / 900 * 640);// 64rem
+	position: relative;
+	z-index: z('image');
+	@include respond-to('portrait') {
+		width: 96rem;
+		height: 128rem;
+		@include respond-to('medium') {
+			width: 100%;
+			height: calc(564/750 * 100vw);
+			// width: 100vw;
+			// width: 100dvw;
+			padding-right: 1rem;
+		}
+
+		// align-self: center;
+	}
+	@include respond-to('medium') {
+		// width: 100%;
+		// height: calc(564/750 * 100vw);
+		// width: 100vw;
+		// width: 100dvw;
+		padding-right: 1rem;
+	}
+	@include respond-to('small') {
+		width: 100%;
+		height: calc(564/750 * 100vw);
+		// width: 100vw;
+		// width: 100dvw;
+		padding-right: 1rem;
+	}
+
+}
+
+.content__image--media{
+	@extend %cover;
+
+	object-fit: contain;
+	object-position: top;
+}
+
+.content__image--media-small{
+
+}
+
+.content__image--media-big{
+
+}

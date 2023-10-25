@@ -1,0 +1,30 @@
+.content__info--gallery{
+	display: flex;
+	justify-content: space-between;
+	max-width: 48rem;
+	align-items: center;
+	padding-top: calc(100vh / 900 * 110); // 11rem
+	@include respond-to('portrait') {
+		 padding-top: 11rem;
+	 }
+	@include respond-to('small') {
+		padding-top: 5rem;
+	}
+}
+
+.gallery__databiz{
+	 height: 2rem;
+	 width: 11.4rem;
+}
+.gallery__audiophile{
+	 height: 3.6rem;
+	 width: 7.3rem;
+}
+.gallery__meet{
+	height: 2rem;
+	width: 9rem;
+}
+.gallery__maker{
+	height: 2.4rem;
+	width: 8.3rem;
+}

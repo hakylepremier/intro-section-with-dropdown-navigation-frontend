@@ -1,0 +1,21 @@
+{
+	"name": "pug-sass-starter-webpack-config",
+	"version": "1.0.0",
+	"description": "This is a boilerplate configuration that allows me to use pug and scss for my project powered by webpack",
+	"main": "index.js",
+	"scripts": {
+		"build": "webpack",
+		"serve": "webpack serve"
+	},
+	"author": "Haky",
+	"license": "ISC",
+	"devDependencies": {
+		"css-loader": "^6.8.1",
+		"pug-plugin": "^4.9.9",
+		"sass": "^1.69.4",
+		"sass-loader": "^13.3.2",
+		"webpack": "^5.89.0",
+		"webpack-cli": "^5.1.4",
+		"webpack-dev-server": "^4.15.1"
+	}
+}

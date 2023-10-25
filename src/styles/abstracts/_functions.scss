@@ -1,0 +1,37 @@
+/** @format */
+
+/// Slightly lighten a color
+/// @access public
+/// @param {String} $name - name in the $z-indexes list
+/// @requires $z-indexes
+/// @return {Number | Null}
+///
+@function z($name) {
+	@if index($z-indexes, $name) {
+		@return (length($z-indexes) - index($z-indexes, $name)) + 1;
+	} @else {
+		@warn 'There is no item "#{$name}" in the list; Chose one of: #{$z-indexes}';
+
+		@return null;
+	}
+}
+
+/// Slightly lighten a color
+/// @access public
+/// @param {Color} $color - color to tint
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+///
+@function tint($color, $percentage) {
+	@return mix(white, $color, $percentage);
+}
+
+/// Slightly darken a color
+/// @access public
+/// @param {Color} $color - color to shade
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+///
+@function shade($color, $percentage) {
+	@return mix(black, $color, $percentage);
+}

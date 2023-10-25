@@ -1,0 +1,14 @@
+.content{
+	display: flex;
+	padding-top: calc(100vh / 900 * 68);// 6.8rem
+	@include respond-to('portrait') {
+		flex-direction: column-reverse;
+		justify-content: center;
+		align-items: center;
+		padding-top: 6.8rem;
+		margin: auto;
+	}
+	@include respond-to('small') {
+		padding: 0;
+	}
+}

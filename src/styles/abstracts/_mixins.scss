@@ -1,0 +1,104 @@
+/** @format */
+
+/// Makes the element cover the entirety and a parent element positioned reletaive
+/// @example scss - Usage
+/// .foo {
+///   color: red;
+///
+///   @extend %cover;
+/// }
+%cover {
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+/// Center the contents of an element
+/// @example scss - Usage
+/// .foo {
+///   color: red;
+///
+///   @extend %center;
+/// }
+%center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/// Responsive breakpoint manager
+/// @access public
+/// @param {String} $breakpoint - Breakpoint
+/// @requires $breakpoints
+///
+/// @example scss - Usage
+/// .foo {
+///   color: red;
+///
+///   @include respond-to('medium') {
+///     color: blue;
+///   }
+/// }
+/// @example css - CSS output
+/// .foo {
+///   color: red;
+/// }
+///
+/// @media (min-width: 800px) {
+///   .foo {
+///     color: blue;
+///   }
+/// }
+@mixin respond-to($breakpoint) {
+	$raw-query: map-get($breakpoints, $breakpoint);
+
+	@if $raw-query {
+		$query: if(
+			type-of($raw-query) == "string",
+			unquote($raw-query),
+			inspect($raw-query)
+		);
+
+		@media #{$query} {
+			@content;
+		}
+	} @else {
+		@error 'No value found for `#{$breakpoint}`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+	}
+}
+
+/// Mixin helping defining both `width` and `height` simultaneously.
+///
+/// @author Kitty Giraudel
+///
+/// @access public
+///
+/// @param {Length} $width - Element’s `width`
+/// @param {Length} $height [$width] - Element’s `height`
+///
+/// @example scss - Usage
+///   .foo {
+///     @include size(10em);
+///   }
+///
+///   .bar {
+///     @include size(100%, 10em);
+///   }
+///
+/// @example css - CSS output
+///   .foo {
+///     width: 10em;
+///     height: 10em;
+///   }
+///
+///   .bar {
+///     width: 100%;
+///     height: 10em;
+///   }
+@mixin size($width, $height: $width) {
+	width: $width;
+	height: $height;
+}

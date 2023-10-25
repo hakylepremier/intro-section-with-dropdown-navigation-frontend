@@ -1,0 +1,21 @@
+.logo__wrapper{
+	padding: 4rem;
+	padding-top: calc(100vh / 900 * 32);// 3.2rem
+	@include respond-to('portrait') {
+		padding-top: 3.2rem;
+		position: fixed;
+		top: 0;
+		left: 0;
+	}
+	@include respond-to('small') {
+		padding: 2.8rem 2.2rem 3rem;
+		position: static;	
+		display: flex;
+		justify-content: space-between;
+	}
+}
+
+.logo{
+	height: 2.7rem;
+	width: 8.4rem;
+}
